@@ -1,291 +1,285 @@
-/* =========================
-NEUROSPEC - MODERN UI v5 (REDESIGN)
-Clean Medical UI / UX Upgrade
-========================= */
-
 :root{
-  --primary:#1e3a8a;        /* głęboki niebieski */
-  --primary-dark:#0f172a;
+  --primary:#0F2A4A;
+  --primary-2:#2563EB;
 
-  --accent:#2563eb;         /* CTA */
-  --accent-light:#60a5fa;
+  --bg:#F6F8FC;
+  --card:#FFFFFF;
+  --text:#0F172A;
+  --muted:#64748B;
 
-  --bg:#f6f8fc;
-  --text:#0f172a;
-  --muted:#64748b;
+  --border:#E5E7EB;
 
-  --card:#ffffff;
-  --border:#e5e7eb;
-
-  --success:#16a34a;
-  --warning:#f59e0b;
-  --danger:#ef4444;
-
-  --radius:14px;
+  --radius:16px;
   --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
 
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
+  box-sizing:border-box;
 }
 
 body{
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   background:var(--bg);
   color:var(--text);
-  line-height:1.75;
-  font-size:16px;
+  line-height:1.7;
 }
 
-/* ===== TYPOGRAPHY ===== */
+/* ================= HEADER ================= */
 
-h1,h2,h3,h4{
-  color:var(--primary-dark);
-  line-height:1.3;
-  letter-spacing:-0.02em;
+.header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#fff;
+  border-bottom:1px solid var(--border);
 }
 
-p{
-  color:var(--muted);
-  margin-bottom:1rem;
+.header-top{
+  padding:12px 0;
 }
 
-/* ===== LINKS ===== */
-
-a{
-  color:var(--accent);
-  text-decoration:none;
-  transition:0.2s ease;
+.header-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
 }
 
-a:hover{
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  font-size:18px;
   color:var(--primary);
 }
 
-/* ===== CONTAINERS ===== */
-
-.container{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 20px;
+.logo-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--primary-2);
 }
 
-/* ===== CARDS ===== */
-
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:24px;
-  box-shadow:var(--shadow);
-  transition:0.25s ease;
-}
-
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 14px 40px rgba(15,23,42,0.12);
-}
-
-/* ===== BUTTONS ===== */
-
-button,
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-
-  padding:12px 18px;
-  border-radius:12px;
-  border:none;
-
-  font-weight:600;
-  cursor:pointer;
-
-  transition:0.2s ease;
-  font-size:15px;
-}
-
-.btn-primary{
-  background:var(--accent);
-  color:#fff;
-}
-
-.btn-primary:hover{
-  background:var(--primary);
-  transform:translateY(-2px);
-}
-
-.btn-outline{
-  background:transparent;
-  border:1px solid var(--border);
-  color:var(--text);
-}
-
-.btn-outline:hover{
-  border-color:var(--accent);
-  color:var(--accent);
-}
-
-/* ===== HEADER ===== */
-
-header{
-  background:#fff;
-  border-bottom:1px solid var(--border);
-  position:sticky;
-  top:0;
-  z-index:100;
-}
-
-header .container{
+.header-contact{
   display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 20px;
+  gap:15px;
+  color:var(--muted);
+  font-size:14px;
 }
 
-/* ===== NAVIGATION ===== */
+.header-nav{
+  border-top:1px solid var(--border);
+}
+
+.nav-inner{
+  display:flex;
+  justify-content:center;
+  padding:10px 0;
+}
 
 nav a{
   margin:0 12px;
-  font-weight:500;
+  text-decoration:none;
   color:var(--muted);
+  font-weight:500;
 }
 
 nav a:hover{
   color:var(--primary);
 }
 
-/* ===== SECTIONS ===== */
+/* ================= HERO ================= */
+
+.hero-premium{
+  padding:80px 0;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:40px;
+  align-items:center;
+}
+
+.hero-left h1{
+  font-size:44px;
+  line-height:1.2;
+  margin-bottom:15px;
+}
+
+.hero-left p{
+  color:var(--muted);
+  font-size:18px;
+}
+
+.hero-badges{
+  margin:20px 0;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.badge{
+  background:#EAF2FF;
+  color:var(--primary-2);
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:600;
+}
+
+.hero-actions{
+  display:flex;
+  gap:12px;
+  margin-top:20px;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn{
+  padding:12px 18px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.btn-primary{
+  background:var(--primary-2);
+  color:#fff;
+}
+
+.btn-primary:hover{
+  background:var(--primary);
+}
+
+.btn-outline{
+  border:1px solid var(--border);
+  color:var(--text);
+  background:#fff;
+}
+
+.btn-outline:hover{
+  border-color:var(--primary-2);
+  color:var(--primary-2);
+}
+
+.btn-small{
+  padding:8px 14px;
+  font-size:13px;
+}
+
+/* ================= CARDS ================= */
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:var(--shadow);
+  transition:0.2s ease;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+/* ================= GRID ================= */
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.grid-3 a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* ================= SECTIONS ================= */
 
 section{
   padding:60px 0;
 }
 
-/* ===== HERO ===== */
-
-.hero{
-  background:linear-gradient(135deg,#eef2ff,#f8fafc);
-  padding:80px 0;
+.section-title{
   text-align:center;
+  font-size:28px;
+  margin-bottom:30px;
 }
 
-.hero h1{
-  font-size:42px;
-  margin-bottom:16px;
+/* ================= HERO CARD ================= */
+
+.hero-card h3{
+  margin-bottom:8px;
 }
 
-.hero p{
-  font-size:18px;
-  max-width:700px;
-  margin:0 auto;
+.divider{
+  height:1px;
+  background:var(--border);
+  margin:15px 0;
 }
 
-/* ===== GRID ===== */
+/* ================= CTA ================= */
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-}
-
-/* ===== FORMS ===== */
-
-input, select, textarea{
-  width:100%;
-  padding:12px 14px;
-  border:1px solid var(--border);
-  border-radius:10px;
-  font-size:15px;
-  outline:none;
-  transition:0.2s;
-  background:#fff;
-}
-
-input:focus, textarea:focus, select:focus{
-  border-color:var(--accent);
-  box-shadow:0 0 0 3px rgba(37,99,235,0.15);
-}
-
-/* ===== TABLES ===== */
-
-table{
-  width:100%;
-  border-collapse:collapse;
-  background:#fff;
+.cta-box{
+  background:var(--primary);
+  color:#fff;
+  padding:40px;
   border-radius:var(--radius);
-  overflow:hidden;
-  box-shadow:var(--shadow);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-th,td{
-  padding:14px;
-  border-bottom:1px solid var(--border);
-  text-align:left;
-}
-
-th{
-  background:#f1f5f9;
-  color:var(--primary-dark);
-}
-
-/* ===== UTILITIES ===== */
-
-.text-center{text-align:center;}
-.mt-1{margin-top:10px;}
-.mt-2{margin-top:20px;}
-.mt-3{margin-top:30px;}
-.mt-4{margin-top:40px;}
-
-.badge{
-  display:inline-block;
-  padding:4px 10px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:600;
-  background:#eef2ff;
-  color:var(--primary);
-}
-
-/* ===== FOOTER ===== */
+/* ================= FOOTER ================= */
 
 footer{
-  background:#0f172a;
+  background:#0B1C33;
   color:#cbd5e1;
-  padding:40px 0;
-  margin-top:60px;
+  padding:50px 0;
 }
 
 footer a{
   color:#93c5fd;
+  text-decoration:none;
 }
 
-footer a:hover{
-  color:#fff;
+.footer-bottom{
+  text-align:center;
+  margin-top:30px;
+  opacity:0.6;
 }
 
-/* ===== MOBILE ===== */
+/* ================= RESPONSIVE ================= */
 
-@media (max-width:768px){
-  .hero h1{
-    font-size:30px;
+@media(max-width:900px){
+  .hero-grid{
+    grid-template-columns:1fr;
   }
 
-  nav{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    justify-content:center;
+  .grid-3{
+    grid-template-columns:1fr;
   }
 
-  header .container{
+  .cta-box{
     flex-direction:column;
-    gap:10px;
+    gap:20px;
+    text-align:center;
+  }
+
+  .header-inner{
+    flex-direction:column;
+  }
+
+  nav a{
+    display:inline-block;
+    margin:6px;
   }
 }
